@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 
-<head>
+<head style="background-color: #545454;">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,13 +28,13 @@
 </head>
 
 
-<body>
+<body style="background-color: #dddddd;">
     <header>
-        <div class="card" style="color: var(--global-background-color);">
+        <div class="card" >
 
                 <nav class="navbar navbar-expand-lg bg-body-tertiary"  style="position: initial; margin: 0.5em;">
 
-                    <a href="" style="position: absolute; left: 0;color: black; margin: 1em;" >
+                    <a href="" style="position: absolute; left: 0;color: rgb(0, 0, 0); margin: 1em;" >
 
                         <i class="fa fa-lock" aria-hidden="true" style="font-size: large; width: fit-content; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Password Manager</i>
 
@@ -139,6 +139,7 @@
             </div>
 
     </div>
+
     <!--cards-->
     <div class="container">
         {% for password in passwords %}
@@ -168,14 +169,10 @@
                     </form>
 
                 </div>
-
             </button>
-
         </div>
         {% endfor %}
-        
     </div>  
-
 </body>
 
 
