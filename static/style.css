@@ -8,10 +8,11 @@
 }
 :root {
     --global-background-color: #171717;
-    --link-background-color: #DA0037;
+    --link-background-color: #865662;
     --global-text-color: #ededed;
     --text-hover-color: #444444;
-    --gray-color: rgba(255,255,255,0.1)
+    --gray-color: rgba(255,255,255,0.1);
+    --button-hover-color: #743434;
 
 }
 html{
@@ -143,6 +144,25 @@ footer{
     align-items: center;
     padding: 20px;
     border: 20px;
+
+}
+
+.randomize {
+    
+    background-color: var(--text-hover-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 5px;
+    
+}
+
+.button-action{
+    cursor: pointer;
+    border: solid 2px var(--button-hover-color);
+    padding: 5px;
 
 }
 

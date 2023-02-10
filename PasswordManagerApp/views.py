@@ -1,3 +1,4 @@
+import string
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.conf import settings
@@ -92,7 +93,11 @@ def home(request):
         elif "add-password" in request.POST:
             url = request.POST.get("url")
             email = request.POST.get("email")
-            password = request.POST.get("password")
+            if request.POST.get("generate_password") == "on":
+                password = ''.join(random.choices(string.ascii_letters + string.digits + '!'+'#'+'='+'$'+'=', k=12))
+            else :
+                password = request.POST.get("password")
+            
             #encrypt
             encrypted_email = fernet.encrypt(email.encode())
 
