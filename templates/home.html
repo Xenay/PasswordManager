@@ -116,7 +116,8 @@
                     </h2>
                     <input type="text" name="url" placeholder="Url of the website">
                     <input type="email" name="email" placeholder="Email">
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password" id="id_password">
+                    <input type="button" value="Generate Password" onclick="generatePassword()">
                     <input type="submit" value="Save" name = "add-password" >
                 </form>
             </div>
@@ -133,14 +134,18 @@
 
       <!--password login-->
       <input type="email" name="email" value ="{{password.email}}">
-      <a style="margin:1em; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fas fa-copy copy" title="copy to clipboard" > </i>  Copy Username</a>
+      <a style="margin:1em; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" onclick="copyToClipboard('{{password.username}}')"><i class="fas fa-copy copy" title="copy to clipboard" > </i>  Copy Username</a>
       <input type="password" name="username" id = "PasswordBox{{password.id}}" value="{{password.password}}">
-      <a style="margin:1em; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i class="fas fa-copy copy" title="copy to clipboard" > </i>  Copy Password</a>
+      <a style="margin:1em; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" onclick="copyToClipboard('{{password.username}}')"><i class="fas fa-copy copy" title="copy to clipboard" > </i>  Copy Password</a>
      
+
+      
       <input type="checkbox" onclick="toggleVisibility('PasswordBox{{password.id}}')"> 
       <div style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
       Show Password 
       </div>
+
+      
 
         <a href="javascript:;" onclick= "document.getElementById('delete-btn{{password.id}}').click();" class="action-item" style="margin: 1em; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Delete</a>
         <form hidden = "true" action= "." method="POST">

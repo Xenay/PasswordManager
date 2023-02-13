@@ -35,4 +35,22 @@ function toggleVisibility(id) {
     } else {
       x.type = "password";
     }
+
+  }
+
+function generatePassword() {
+    var passwordLength = 12;
+    var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]\:;?><,./-=";
+    var password = "";
+    for (var i = 0, n = charset.length; i < passwordLength; ++i) {
+      password += charset.charAt(Math.floor(Math.random() * n));
+    }
+    document.getElementById("id_password").value = password;
+  }
+
+ 
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+      .then(() => console.log('Copied to clipboard'))
+      .catch((error) => console.error('Could not copy text: ', error));
   }
